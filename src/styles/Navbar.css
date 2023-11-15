@@ -1,0 +1,12 @@
+.navbar {
+    width: 200%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+  }
+  
+  body {
+    padding-top: 56px; /* Adjust this value based on the navbar height */
+  }
+  

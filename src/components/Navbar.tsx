@@ -2,10 +2,11 @@
 import React from "react";
 import { Navbar as BootstrapNavbar, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import '../styles/Navbar.css';
 
 const Navbar: React.FC = () => {
   return (
-    <BootstrapNavbar bg="dark" variant="dark" expand="lg">
+    <BootstrapNavbar bg="dark" variant="dark" expand="lg" fixed="top">
       <BootstrapNavbar.Brand as={Link} to="/">
         My App
       </BootstrapNavbar.Brand>
