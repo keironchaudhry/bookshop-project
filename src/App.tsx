@@ -1,14 +1,18 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import { Container } from "react-bootstrap";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <Container>
-      <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/about" element={<h1>About</h1>} />
-      </Routes>
-    </Container>
+    <Router>
+      <Container>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Container>
+    </Router>
   );
 }
 
