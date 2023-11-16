@@ -1,14 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Container>
+    <div className="app">
+      <Navbar />
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
-        <Route path="/about" element={<h1>About</h1>} />
+        <Route path="/" element={<Home />} />
       </Routes>
-    </Container>
+    </div>
   );
 }
 
