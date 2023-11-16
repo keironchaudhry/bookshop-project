@@ -16,18 +16,18 @@ const Navbar: React.FC = () => {
           <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/about">
-            About
+          <Nav.Link as={Link} to="/signin">
+            Sign In
           </Nav.Link>
         </Nav>
-        <Form className="d-flex">
+        <Form className="d-flex form align-end">
           <Form.Control
             type="search"
             placeholder="Search"
             className="me-2"
             aria-label="Search"
           />
-          <Button className="search" variant="outline-success">Search</Button>
+          <Button className="search" variant="outline-light">Search</Button>
         </Form>
       </BootstrapNavbar.Collapse>
     </BootstrapNavbar>
