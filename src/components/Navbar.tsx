@@ -3,6 +3,8 @@ import React from "react";
 import { Navbar as BootstrapNavbar, Button, Form, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar: React.FC = () => {
   return (
@@ -19,6 +21,9 @@ const Navbar: React.FC = () => {
           <Nav.Link as={Link} to="/signin">
             Sign In
           </Nav.Link>
+          <Nav.Link as={Link} to="/shopping">
+            <FontAwesomeIcon icon={faCartShopping} />
+          </Nav.Link>
         </Nav>
         <Form className="d-flex form align-end">
           <Form.Control
@@ -27,7 +32,9 @@ const Navbar: React.FC = () => {
             className="me-2"
             aria-label="Search"
           />
-          <Button className="search" variant="outline-light">Search</Button>
+          <Button className="search" variant="outline-light">
+            Search
+          </Button>
         </Form>
       </BootstrapNavbar.Collapse>
     </BootstrapNavbar>
