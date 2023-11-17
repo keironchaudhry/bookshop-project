@@ -1,0 +1,47 @@
+
+.welcomeCard {
+  position: relative;
+  width: 100% !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.welcomeImage {
+  width: 109% !important;
+  max-width: max-content !important; /* Make the image take the full width of its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: flex;
+  
+  border-radius: 5px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.welcomeMessage {
+  font-size: 2rem;
+  color: #fafafa;
+}
+
+.card-deck {
+  margin-top: 20px;
+  width: fit-content !important;
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.cardImg {
+  width: 80px !important;
+  margin-left: 30px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
