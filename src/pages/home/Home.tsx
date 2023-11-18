@@ -1,10 +1,45 @@
 import React from "react";
-import { Container, Card, Button, Row, Col } from "react-bootstrap";
+import { Container, Card, Button, Carousel } from "react-bootstrap";
 import book1 from "../../assets/images/philosophorsstone.png";
 import book2 from "../../assets/images/chamberofsecrets.png";
 import book3 from "../../assets/images/prizonerofaz.png";
-import welcomeImage from "../../assets/images/welcomeimage.jpg";
+import book4 from "../../assets/images/worstwitch.jpg";
+import book5 from "../../assets/images/nightcircus.jpg";
+import welcomeImage from "../../assets/images/welcomeimage.png";
 import styles from "./Home.module.css";
+
+const books = [
+  {
+    id: 1,
+    title: "Book Title 1",
+    description: "Description for Book 1",
+    image: book1,
+  },
+  {
+    id: 2,
+    title: "Book Title 2",
+    description: "Description for Book 2",
+    image: book2,
+  },
+  {
+    id: 3,
+    title: "Book Title 3",
+    description: "Description for Book 3",
+    image: book3,
+  },
+  {
+    id: 4,
+    title: "Book Title 4",
+    description: "Description for Book 4",
+    image: book4,
+  },
+  {
+    id: 5,
+    title: "Book Title 5",
+    description: "Description for Book 5",
+    image: book5,
+  },
+];
 
 const Home: React.FC = () => {
   return (
@@ -17,60 +52,36 @@ const Home: React.FC = () => {
             className={` ${styles.welcomeImage}`}
           />
         </div>
-        <div className={styles.overlay}>
-          <h1 className={styles.welcomeMessage}>Welcome to Our Bookstore</h1>
-        </div>
       </div>
-      <div className="mt-4">
-        <h2>Featured Books</h2>
-        <Row>
-          <Col md={4}>
-            <Card>
+      <h2>Featured Books</h2>
+      <Carousel>
+        {books.map((book) => (
+          <Carousel.Item key={book.id}>
+            <Card className={`${styles.card} d-flex justify-content-center`}>
               <Card.Img
                 variant="top"
-                src={book1}
-                alt="Book 1"
-                className={`${styles.cardImg} d-flex justify-content-center align-items-center`}
+                src={book.image}
+                alt={book.title}
+                className={`${styles.cardImg} card-img`}
               />
               <Card.Body>
-                <Card.Title>Book Title 1</Card.Title>
-                <Card.Text>Description for Book 1.</Card.Text>
-                <Button variant="primary">View Details</Button>
+                <Card.Title className={`${styles.cardTitle} card-title`}>
+                  {book.title}
+                </Card.Title>
+                <Card.Text className={`${styles.cardText} card-text`}>
+                  {book.description}
+                </Card.Text>
+                <Button
+                  variant="primary"
+                  className={`${styles.button} button-container`}
+                >
+                  View Details
+                </Button>
               </Card.Body>
             </Card>
-          </Col>
-          <Col md={4}>
-            <Card>
-              <Card.Img
-                variant="top"
-                src={book2}
-                alt="Book 2"
-                className={`${styles.cardImg} d-flex justify-content-center align-items-center`}
-              />
-              <Card.Body>
-                <Card.Title>Book Title 2</Card.Title>
-                <Card.Text>Description for Book 2.</Card.Text>
-                <Button variant="primary">View Details</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={4}>
-            <Card>
-              <Card.Img
-                variant="top"
-                src={book3}
-                alt="Book 3"
-                className={styles.cardImg}
-              />
-              <Card.Body>
-                <Card.Title>Book Title 3</Card.Title>
-                <Card.Text>Description for Book 3.</Card.Text>
-                <Button variant="primary">View Details</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </Container>
   );
 };
