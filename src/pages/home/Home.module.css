@@ -1,0 +1,72 @@
+.welcomeCard {
+  position: relative;
+  width: 100% !important;
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.welcomeImage {
+  width: 109% !important;
+  max-width: max-content !important; /* Make the image take the full width of its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: flex;
+
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.card {
+  transition: transform 0.3s;
+  margin-bottom: 20%;
+  width: 30%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cardImg {
+  height: 90%;
+  width: 40% !important;
+  object-fit: cover;
+  margin-left: 25%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  margin-top: 1rem;
+}
+
+.card-text {
+  flex-grow: 1;
+  text-align: center; 
+}
+
+.button-container {
+  margin-top: 1rem;
+}
+
+.row {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.col-md-4 {
+  flex: 0 0 auto;
+  width: 50%; /* You can adjust the width based on your preference */
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+}
