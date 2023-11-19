@@ -5,12 +5,15 @@ import { Link, useNavigate } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import mockUsers from "../../data/Users";
 
 export function LoginForm() {
   const [loginData, setLoginData] = useState({
     email: "",
-    password1: "",
+    password: "",
   });
+
+  const { email, password } = loginData;
 
   const handleChange = (event: { target: { name: string; value: string } }) => {
     setLoginData({
@@ -24,12 +27,22 @@ export function LoginForm() {
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     try {
+      const matchedUser = mockUsers.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (matchedUser) {
+        console.log("Login successful!");
+        navigate("/");
+      } else {
+        console.log("Login failed. Incorrect email or password.");
+      }
+
       setLoginData({
         email: "",
-        password1: "",
+        password: "",
       });
 
-      navigate("/home");
     } catch (error) {
       console.error(error);
     }
@@ -52,8 +65,8 @@ export function LoginForm() {
           <Form.Control
             type="password"
             placeholder="Enter your password"
-            name="password1"
-            value={loginData.password1}
+            name="password"
+            value={loginData.password}
             onChange={handleChange}
           />
         </Form.Group>
