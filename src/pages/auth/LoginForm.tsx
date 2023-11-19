@@ -35,7 +35,7 @@ export function LoginForm() {
         console.log("Login successful!");
         navigate("/");
       } else {
-        console.log("Login failed. Incorrect email or password.");
+        alert("Invalid email or password.");
       }
 
       setLoginData({
