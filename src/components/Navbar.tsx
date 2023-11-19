@@ -1,16 +1,16 @@
-// Navbar.tsx
 import React from "react";
 import { Navbar as BootstrapNavbar, Button, Form, Nav } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import logo from "../assets/images/storysafari.png";
 
 const Navbar: React.FC = () => {
   return (
     <BootstrapNavbar variant="dark" expand="lg" fixed="top">
       <BootstrapNavbar.Brand as={Link} to="/">
-        Story Safari
+        <img src={logo} alt="Story Safari Logo" className="logo-img" />
       </BootstrapNavbar.Brand>
       <BootstrapNavbar.Toggle aria-controls="navbar-nav" />
       <BootstrapNavbar.Collapse id="navbar-nav">
