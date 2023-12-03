@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import mockUsers from "../../data/Users";
+import { useCurrentUser } from "../../context/CurrentUserContext";
 
 export function LoginForm() {
   const [loginData, setLoginData] = useState({
@@ -14,6 +15,8 @@ export function LoginForm() {
   });
 
   const { email, password } = loginData;
+
+  const { setCurrentUser } = useCurrentUser();
 
   const handleChange = (event: { target: { name: string; value: string } }) => {
     setLoginData({
@@ -33,6 +36,7 @@ export function LoginForm() {
 
       if (matchedUser) {
         console.log("Login successful!");
+        setCurrentUser(matchedUser);
         navigate("/");
       } else {
         alert("Invalid email or password.");
