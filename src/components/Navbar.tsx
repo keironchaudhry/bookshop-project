@@ -10,6 +10,10 @@ import { useCurrentUser } from "../context/CurrentUserContext";
 const Navbar: React.FC = () => {
   const { currentUser } = useCurrentUser();
 
+  function refreshPage() {
+    window.location.reload();
+  };
+
   return (
     <BootstrapNavbar variant="dark" expand="lg" fixed="top">
       <BootstrapNavbar.Brand as={Link} to="/">
@@ -26,7 +30,7 @@ const Navbar: React.FC = () => {
               <Nav.Link as={Link} to="/shopping">
                 <FontAwesomeIcon icon={faCartShopping} />
               </Nav.Link>
-              <Nav.Link as={Link} to="/logout">
+              <Nav.Link as={Link} to="#" onClick={refreshPage}>
                 Logout
               </Nav.Link>
             </>
