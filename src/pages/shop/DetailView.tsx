@@ -15,6 +15,8 @@ export default function DetailView() {
       {book ? (
         <>
           <h2>{book.title}</h2>
+          {book.image && <img src={book.image} alt={book.title} />}
+          <p>{book.description}</p>
         </>
       ) : (
         <p>Book not found</p>
