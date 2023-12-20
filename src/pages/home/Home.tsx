@@ -88,7 +88,7 @@ const Home: React.FC = () => {
 
   const totalChunks = Math.ceil(books.length / chunkSize);
 
-  const handleSelect = (selectedIndex: number, e: any) => {
+  const handleSelect = (selectedIndex: number, _e: any) => {
     setActiveIndex(selectedIndex);
   };
 
