@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Container, Card, Button, Carousel, Pagination } from "react-bootstrap";
+import {
+  Container,
+  Card,
+  Button,
+  Carousel,
+  Pagination,
+} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import book1 from "../../assets/images/philosophorsstone.png";
 import book2 from "../../assets/images/chamberofsecrets.png";
 import book3 from "../../assets/images/prizonerofaz.png";
@@ -17,7 +24,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./Home.module.css";
 
-const books = [
+export const books = [
   {
     id: 1,
     title: "Book Title 1",
@@ -81,7 +88,7 @@ const Home: React.FC = () => {
 
   const totalChunks = Math.ceil(books.length / chunkSize);
 
-  const handleSelect = (selectedIndex: number, e: any) => {
+  const handleSelect = (selectedIndex: number, _e: any) => {
     setActiveIndex(selectedIndex);
   };
 
@@ -133,9 +140,11 @@ const Home: React.FC = () => {
                       <Card.Text className={`${styles.cardText} card-text`}>
                         {book.description}
                       </Card.Text>
-                      <Button className={`${styles.button} button-container`}>
-                        View Details
-                      </Button>
+                      <Link to={`/shop/${book.id}`}>
+                        <Button className={`${styles.button} button-container`}>
+                          View Details
+                        </Button>
+                      </Link>
                     </Card.Body>
                   </Card>
                 ))}
