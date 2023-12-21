@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Container,
-  Card,
-  Button,
-  Carousel,
-  Pagination,
-} from "react-bootstrap";
+import { Container, Card, Button, Carousel, Pagination } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import book1 from "../../assets/images/philosophorsstone.png";
 import book2 from "../../assets/images/chamberofsecrets.png";
@@ -145,6 +139,9 @@ const Home: React.FC = () => {
                           View Details
                         </Button>
                       </Link>
+                      <Button className={`${styles.button} button-container`}>
+                        Add to Cart
+                      </Button>
                     </Card.Body>
                   </Card>
                 ))}

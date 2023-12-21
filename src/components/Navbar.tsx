@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
 
   function refreshPage() {
     window.location.reload();
-  };
+  }
 
   return (
     <BootstrapNavbar variant="dark" expand="lg" fixed="top">
@@ -27,11 +27,11 @@ const Navbar: React.FC = () => {
           </Nav.Link>
           {currentUser ? (
             <>
-              <Nav.Link as={Link} to="/shopping">
-                <FontAwesomeIcon icon={faCartShopping} />
-              </Nav.Link>
               <Nav.Link as={Link} to="#" onClick={refreshPage}>
                 Logout
+              </Nav.Link>
+              <Nav.Link as={Link} to="/basket">
+                <FontAwesomeIcon icon={faCartShopping} />
               </Nav.Link>
             </>
           ) : (
